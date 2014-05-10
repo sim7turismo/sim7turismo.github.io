@@ -1,0 +1,23 @@
+{
+  "name": "sim7turismo",
+  "version": "1.0.0",
+  "homepage": "https://github.com/VictorQueiroz/sim7turismo.github.io",
+  "authors": [
+    "Victor Queiroz (Vi) <victorcqueirozg@gmail.com>"
+  ],
+  "description": "Sim7 Turismo blog.",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angularjs": "*",
+    "angular-bootstrap": "~0.11.0",
+    "bootstrap-sass": "~3.0.2"
+  }
+}
