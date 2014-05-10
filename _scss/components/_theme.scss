@@ -1,0 +1,28 @@
+@import "../../bower_components/bootstrap-sass/lib/mixins";
+
+.navbar-default {
+  @include gradient-vertical($start-color: lighten($navbar-default-bg, 5%), $end-color: $navbar-default-bg);
+  @include reset-filter(); // Remove gradient in IE<10 to fix bug where dropdowns don't get triggered
+  border-radius: $navbar-border-radius;
+  $shadow: inset 0 1px 0 rgba(255,255,255,.15), 0 1px 5px rgba(0,0,0,.075);
+  @include box-shadow($shadow);
+
+  .navbar-nav > .active > a {
+    @include gradient-vertical($start-color: darken($navbar-default-bg, 3%), $end-color: darken($navbar-default-bg, 2%));
+    @include box-shadow(inset 0 3px 9px rgba(0,0,0,.075));
+  }
+
+  * {
+    transition: all .15s;
+  }
+
+  .navbar-nav > li > a {
+    color: $navbar-default-item-color;
+    text-shadow: 0 1px 0 rgba(0,0,0,.25);
+
+    &:hover {
+      background: $navbar-default-item-hover-bg;
+      color: $navbar-default-item-hover-color;
+    }
+  }
+}

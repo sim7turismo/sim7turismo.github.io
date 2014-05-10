@@ -25578,3 +25578,10 @@ angular.module("template/typeahead/typeahead-popup.html", []).run(["$templateCac
     "    </li>\n" +
     "</ul>");
 }]);
+
+var app = angular.module('app', ['ui.bootstrap']);
+
+app.config(['$interpolateProvider', function ($interpolateProvider) {
+  $interpolateProvider.startSymbol('[[');
+  $interpolateProvider.endSymbol(']]');
+}]);

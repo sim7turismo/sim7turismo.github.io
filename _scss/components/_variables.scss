@@ -1,0 +1,12 @@
+$navbar-default-bg: #EF4836;
+$navbar-default-item-color: #fff;
+
+$navbar-default-item-color: #fff;
+$navbar-default-item-hover-color: #fff;
+
+$navbar-default-item-bg: $navbar-default-bg;
+$navbar-default-item-hover-bg: darken($navbar-default-item-bg, 4%);
+
+body, h1, h2, h3, h4, h5, h6, p {
+  font-family: 'Bitter Ht';
+}

@@ -1,1 +1,11 @@
-@import "../bower_components/bootstrap-sass/lib/_theme.scss";
+@import "../bower_components/bootstrap-sass/lib/theme";
+@import "../bower_components/bootstrap-sass/lib/bootstrap";
+
+@import "components/variables";
+@import "components/thumbnail";
+@import "components/theme";
+@import "components/fonts";
+
+.carousel-control {
+  cursor: pointer;
+}

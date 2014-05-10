@@ -1,0 +1,36 @@
+$fonts-path: '../fonts';
+
+@font-face {
+  font-family: 'Bitter Ht';
+  src: url('#{$fonts-path}/bitter-ht/Bitter-Regular.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Bitter Ht';
+  src: url('#{$fonts-path}/bitter-ht/Bitter-Bold.otf');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Bitter Ht';
+  src: url('#{$fonts-path}/bitter-ht/Bitter-Italic.otf');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Bitter Ht';
+  src: url('#{$fonts-path}/bitter-ht/Bitter-BoldItalic.otf');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Edlo';
+  src: url('#{$fonts-path}/edlo/edlo.ttf');
+  font-weight: normal;
+  font-style: normal;
+}

@@ -4,7 +4,8 @@ module.exports = function(grunt) {
     sass: {
       dist: {
         files: {
-          '_css/style.css': ['bower_components/bootstrap-sass/lib/bootstrap.scss', '_scss/sim7turismo.scss']
+          '_css/bootstrap.css': ['bower_components/bootstrap-sass/lib/bootstrap.scss'],
+          '_css/style.css': ['_scss/sim7turismo.scss']
         }
       }
     },
@@ -12,6 +13,7 @@ module.exports = function(grunt) {
     cssmin: {
       minify: {
         files: {
+          'css/bootstrap.min.css': ['_css/bootstrap.css'],
           'css/style.min.css': ['_css/style.css']
         }
       }
@@ -20,8 +22,12 @@ module.exports = function(grunt) {
     concat: {
       dist: {
         src: [
+          '_js/vendor/prefixfree.js',
+
           'bower_components/angular/angular.js',
-          'bower_components/angular-bootstrap/ui-bootstrap-tpls.js'
+          'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
+
+          '_js/app.js'
         ],
         dest: '_js/output.js'
       }

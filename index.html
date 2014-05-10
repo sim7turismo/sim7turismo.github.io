@@ -4,12 +4,57 @@ title: Sim7 Turismo Blog
 keywords: "sim7, turismo, viagens, fortaleza, ceará, brasil, férias, jericoacoara, canoa quebrada"
 ---
 
-{% for post in site.posts %}
-  <div class="col-md-6">
-    <h3>
-      <a href="{{ post.url }}">{{ post.title }}</a>
-    </h3>
-    <p>{{ post.date | date_to_string }}</p>
-    <img src="{% if post.thumbnail == null %}http://placehold.it/1200x400{% else %}{{post.thumbnail}}{% endif %}" class="thumbnail">
+<div class="col-lg-12">
+  <div ng-init="slides = [{% for post in site.posts limit: 6 %}{img: '{% if post.thumbnail == null %}http://placehold.it/940x588{% else %}{{post.thumbnail}}{% endif %}'},{% endfor %}]">
+    <carousel interval="interval">
+      <slide ng-repeat="slide in slides" active="slide.active">
+        <img ng-src="[[slide.img]]" style="margin:auto;">
+        <div class="carousel-caption" ng-show="slide.text">
+          <h4>[[$index]]</h4>
+          <p>[[slide.text]]</p>
+        </div>
+      </slide>
+    </carousel>
   </div>
-{% endfor %}
+</div>
+
+<div class="col-sm-8">
+  {% for post in paginator.posts %}
+  <div class="col-xs-6">
+    <h4>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </h4>
+    <p><strong>{{ post.date | date_to_string }}</strong></p>
+    <img src="{% if post.thumbnail == null %}http://placehold.it/1900x1600/fff/e32{% else %}{{post.thumbnail}}{% endif %}" class="thumbnail">
+    {% if post.description != null %}<p>{{ post.description }}</p>{% endif %}
+  </div>
+  {% endfor %}
+</div>
+
+<div class="col-sm-4">
+  <iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fsim7turismo&amp;width&amp;height=290&amp;colorscheme=light&amp;show_faces=true&amp;header=true&amp;stream=false&amp;show_border=true&amp;appId=327553797391792" scrolling="no" frameborder="0" style="border:none; overflow:hidden; margin-top: 10px; height:290px;" allowTransparency="true"></iframe>
+</div>
+
+<!--
+{% if paginator.total_pages > 1 %}
+<div class="col-lg-12" style="position: initial">
+  <ul class="pagination">
+    {% if paginator.previous_page %}
+    <li><a href="{{ '/index.html' | prepend: site.baseurl | replace: '//', '/' }}">&laquo;</a></li>
+    {% else %}
+    <li><a href="#">&laquo;</a></li>
+    {% endif %}
+
+    {% for page in (1..paginator.total_pages) %}      
+    <li {% if page == paginator.page %}class="active"{% endif %}><a href="/page/{{ page }}">{{page}}</a></li>
+    {% endfor %}
+
+    {% if paginator.next_page %}
+    <li><a href="/page/{{ paginator.next_page }}">&raquo;</a></li>
+    {% else %}
+    <li><a href="#">&raquo;</a></li>
+    {% endif %}
+  </ul>
+</div>
+{% endif %}
+-->
